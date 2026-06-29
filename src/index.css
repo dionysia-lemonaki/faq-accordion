@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/src/assets/fonts/WorkSans-VariableFont.woff2") format("woff2");
+}
+
+:root {
+  --purple-100: hsl(275 100% 97%);
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--purple-100);
+}
