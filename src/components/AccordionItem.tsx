@@ -15,7 +15,7 @@ const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   const handleToggle = (): void => setShowMore(!showMore);
 
   return (
-    <div>
+    <div className="py-6 first:pt-0 last:pb-0 border-b border-(--purple-100) last:border-0">
       <h3>
         <button
           type="button"
@@ -23,6 +23,7 @@ const AccordionItem = ({ question, answer }: AccordionItemProps) => {
           aria-controls={panelId}
           id={buttonId}
           onClick={handleToggle}
+          className="w-full flex justify-between items-start text-left text-base md:text-lg font-semibold text-(--purple-950) hover:text-(--violet-600) focus-visible:text-(--violet-600) focus-visible:outline-4 outline-offset-4 focus-visible:outline-dotted focus-visible:outline-(--violet-600)"
         >
           <span>{question}</span>
           <img
@@ -33,8 +34,13 @@ const AccordionItem = ({ question, answer }: AccordionItemProps) => {
           />
         </button>
       </h3>
-      <div id={panelId} role="region" aria-labelledby={buttonId}>
-        {showMore && <p>{answer}</p>}
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        className="text-sm md:text-base md:leading-relaxed font-normal text-(--purple-600)"
+      >
+        {showMore && <p className="pt-7 ">{answer}</p>}
       </div>
     </div>
   );
